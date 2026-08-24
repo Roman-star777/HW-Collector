@@ -37,31 +37,6 @@
   margin-top: 6px;
 }
 
-.live-banner {
-  margin-top: 12px;
-  cursor: pointer;
-}
-.live-banner__dot {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  color: var(--red-light);
-}
-.live-banner b {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 17px;
-  text-transform: uppercase;
-  margin-top: 4px;
-}
-.live-banner span {
-  display: block;
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-top: 2px;
-}
-
 .row-card {
   display: flex;
   align-items: center;

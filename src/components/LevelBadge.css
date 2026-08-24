@@ -1,59 +1,42 @@
 .level-badge {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  border: 2px solid var(--accent);
-  background: radial-gradient(circle at 35% 30%, var(--bg-elevated), var(--bg-base) 75%);
-  box-shadow: 0 0 14px rgba(255, 176, 32, 0.25);
   line-height: 1.1;
 }
 
-.level-badge--md {
-  width: 84px;
-  height: 84px;
+.level-badge__shield {
+  width: 64px;
+  height: 70px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
 }
-.level-badge--sm {
-  width: 56px;
-  height: 56px;
+.level-badge--sm .level-badge__shield {
+  width: 44px;
+  height: 48px;
 }
 
-.level-badge__label {
-  font-family: var(--font-display);
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-}
 .level-badge__num {
+  position: absolute;
+  top: 44%;
+  transform: translateY(-50%);
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 26px;
+  font-size: 17px;
   color: var(--text-primary);
 }
 .level-badge--sm .level-badge__num {
-  font-size: 18px;
+  font-size: 13px;
 }
+
 .level-badge__tier {
+  margin-top: 4px;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 9px;
-  letter-spacing: 0.04em;
-  color: var(--accent);
+  letter-spacing: 0.06em;
 }
-
-/* Tier-и 1-3 бронза, 4-6 срібло, 7-9 золото, 10 — унікальний */
-.level-badge[data-tier='1'],
-.level-badge[data-tier='2'],
-.level-badge[data-tier='3'] {
-  border-color: #a56a28;
-}
-.level-badge[data-tier='4'],
-.level-badge[data-tier='5'],
-.level-badge[data-tier='6'] {
-  border-color: #b9c2cc;
-}
-.level-badge[data-tier='10'] {
-  border-color: #ffd27a;
-  box-shadow: 0 0 20px rgba(255, 210, 122, 0.45);
+.level-badge--sm .level-badge__tier {
+  font-size: 7.5px;
 }

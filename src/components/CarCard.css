@@ -1,4 +1,5 @@
 .car-card {
+  position: relative;
   display: block;
   width: 100%;
   text-align: left;
@@ -8,6 +9,15 @@
   padding: 0;
   overflow: hidden;
   flex: none;
+}
+.car-card__hit {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 .car-card__art {
@@ -43,6 +53,37 @@
   text-transform: uppercase;
   color: var(--text-muted);
   z-index: 1;
+}
+.car-card__badge {
+  position: absolute;
+  top: 8px;
+  right: 40px;
+  z-index: 1;
+}
+.car-card__fav {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 2;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--border-default);
+  background: rgba(8, 10, 12, 0.6);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.car-card__fav svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--text-muted);
+  fill: none;
+  stroke-width: 2;
+}
+.car-card__fav--on svg {
+  stroke: var(--red);
+  fill: var(--red);
 }
 
 .car-card__body {

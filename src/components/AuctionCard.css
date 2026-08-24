@@ -1,0 +1,27 @@
+.auction-card {
+  cursor: pointer;
+}
+.auction-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.auction-card__timer {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--red-light);
+}
+.auction-card__title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 17px;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+.auction-card__subtitle {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}

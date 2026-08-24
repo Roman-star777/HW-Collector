@@ -1,0 +1,60 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.badge--new {
+  background: rgba(76, 141, 255, 0.16);
+  color: var(--status-info);
+  border: 1px solid rgba(76, 141, 255, 0.35);
+}
+.badge--rare {
+  background: rgba(155, 108, 255, 0.16);
+  color: var(--status-purple);
+  border: 1px solid rgba(155, 108, 255, 0.35);
+}
+.badge--exclusive {
+  background: rgba(255, 176, 32, 0.16);
+  color: var(--accent);
+  border: 1px solid rgba(255, 176, 32, 0.4);
+}
+.badge--live {
+  background: rgba(255, 45, 32, 0.18);
+  color: var(--red-light);
+  border: 1px solid rgba(255, 45, 32, 0.4);
+}
+.badge--sold {
+  background: rgba(139, 144, 152, 0.14);
+  color: var(--text-muted);
+  border: 1px solid var(--border-default);
+}
+.badge--discount {
+  background: rgba(25, 183, 122, 0.16);
+  color: var(--status-success);
+  border: 1px solid rgba(25, 183, 122, 0.35);
+}
+.badge--premium {
+  background: linear-gradient(180deg, #ffcb6b, var(--accent));
+  color: #1a1305;
+  border: 1px solid var(--border-active);
+}
+.badge--club {
+  background: rgba(255, 176, 32, 0.1);
+  color: var(--accent);
+  border: 1px solid var(--border-metal);
+}
+.badge--limited {
+  background: rgba(76, 141, 255, 0.14);
+  color: var(--status-info);
+  border: 1px solid rgba(76, 141, 255, 0.3);
+}

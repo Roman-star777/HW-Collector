@@ -1,10 +1,10 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Card } from '../components/Card'
-import { Button } from '../components/Button'
 import { Chip } from '../components/Chip'
 import { CarCard } from '../components/CarCard'
 import { LevelBadge } from '../components/LevelBadge'
+import { AuctionCard } from '../components/AuctionCard'
 import { ITEMS, PRICE_TIERS, SERIES } from '../data/items'
 import type { SeriesKey } from '../types'
 import './shared.css'
@@ -48,14 +48,14 @@ export function Home() {
       </Card>
 
       {/* Банер ефіру */}
-      <Card variant="active" className="live-banner" onClick={() => navigate('/auction')}>
-        <span className="live-banner__dot">● LIVE</span>
-        <b>Аукціон сьогодні о 20:00</b>
-        <span>24 лоти · один під плахтою</span>
-        <Button variant="primary" size="sm" style={{ marginTop: 10 }}>
-          Підключитись
-        </Button>
-      </Card>
+      <AuctionCard
+        title="Аукціон сьогодні о 20:00"
+        subtitle="24 лоти · один під плахтою"
+        timer="00:23"
+        ctaLabel="Підключитись"
+        onClick={() => navigate('/auction')}
+        onCta={() => navigate('/auction')}
+      />
 
       {/* Аукціон без ефіру */}
       <Card className="row-card" onClick={() => navigate('/offauction')}>

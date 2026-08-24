@@ -19,6 +19,7 @@ export interface CarItem {
   price: number
   rarity: 1 | 2 | 3
   status: ItemStatus
+  isNew?: boolean
 }
 
 // ---- Рівні колекціонера: 10 tier-ів по 10 рівнів (1-100) ----
@@ -28,6 +29,7 @@ export interface LevelTier {
   minLevel: number
   maxLevel: number
   badge: string // ключ графіки бейджа (badge_01..badge_10)
+  color: string // акцентний колір цього tier-у
 }
 
 // ---- Стелажі гаража: незалежні від автомобілів оформлення ----

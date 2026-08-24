@@ -11,13 +11,13 @@ export const SERIES: Record<SeriesKey, Series> = {
 }
 
 export const ITEMS: CarItem[] = [
-  { id: '1', name: "Спорткар 69', синій", series: 'muscle', year: '2024', art: 'muscle', price: 240, rarity: 2, status: 'stock' },
+  { id: '1', name: "Спорткар 69', синій", series: 'muscle', year: '2024', art: 'muscle', price: 240, rarity: 2, status: 'stock', isNew: true },
   { id: '2', name: 'Позашляховик 4×4', series: 'offroad', year: 'тираж 5', art: 'suv', price: 0, rarity: 3, status: 'live' },
   { id: '3', name: "Пікап 80', чорний", series: 'trucks', year: '2023', art: 'pickup', price: 180, rarity: 1, status: 'stock' },
   { id: '4', name: "Хетчбек 87', жовтий", series: 'classics', year: '2022', art: 'hatch', price: 210, rarity: 1, status: 'sold' },
-  { id: '5', name: "Купе 71', зелений", series: 'muscle', year: '2025', art: 'muscle', price: 320, rarity: 3, status: 'stock' },
+  { id: '5', name: "Купе 71', зелений", series: 'muscle', year: '2025', art: 'muscle', price: 320, rarity: 3, status: 'stock', isNew: true },
   { id: '6', name: 'Фургон доставки', series: 'trucks', year: '2024', art: 'pickup', price: 150, rarity: 1, status: 'stock' },
-  { id: '7', name: 'Родстер Targa', series: 'exotics', year: '2025', art: 'muscle', price: 380, rarity: 3, status: 'stock' },
+  { id: '7', name: 'Родстер Targa', series: 'exotics', year: '2025', art: 'muscle', price: 380, rarity: 3, status: 'stock', isNew: true },
   { id: '8', name: 'Баггі Dune', series: 'offroad', year: '2024', art: 'suv', price: 190, rarity: 1, status: 'stock' },
 ]
 
