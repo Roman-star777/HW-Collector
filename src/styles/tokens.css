@@ -1,0 +1,106 @@
+/* ============================================================
+   HW COLLECTOR — MASTER DESIGN SYSTEM v1.0 — токени
+   Джерело правди щодо кольорів/шрифтів/радіусів/відступів.
+   Не використовувати hex-коди напряму в компонентах — тільки
+   ці змінні. Якщо потрібен новий колір — спершу додати сюди.
+   ============================================================ */
+
+:root {
+  /* Фон */
+  --bg-base: #080a0c;
+  --bg-secondary: #0d1013;
+  --bg-surface: #111418;
+  --bg-elevated: #171b20;
+
+  /* Рамки */
+  --border-default: #252a30;
+  --border-metal: #6e4a20;
+  --border-active: #a56a28;
+
+  /* Primary — червоний (live, критичні дії, сильні CTA) */
+  --red: #ff2d20;
+  --red-light: #ff5a32;
+
+  /* Accent — золотисто-помаранчевий (навігація, рівні, прогрес, premium) */
+  --accent: #ffb020;
+  --accent-alt: #ff8a00;
+
+  /* Текст */
+  --text-primary: #ffffff;
+  --text-secondary: #d5d7da;
+  --text-muted: #8b9098;
+  --text-disabled: #555b63;
+
+  /* Статуси (лише за функціональним призначенням) */
+  --status-success: #19b77a;
+  --status-danger: #ff3b30;
+  --status-warning: #ffb020;
+  --status-info: #4c8dff;
+  --status-purple: #9b6cff;
+
+  /* Типографіка */
+  --font-display: 'Rajdhani', sans-serif; /* заголовки, числа, рівні */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* 8px сітка відступів */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+
+  /* Радіуси */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-premium: 20px;
+
+  /* Тіні/світіння — стримані, не постійний сильний glow */
+  --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 8px 20px rgba(0, 0, 0, 0.5);
+  --glow-active: 0 0 16px rgba(255, 176, 32, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-base);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--bg-base);
+  position: relative;
+  padding-bottom: 84px; /* місце під bottom nav */
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}

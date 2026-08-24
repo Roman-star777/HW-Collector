@@ -1,0 +1,22 @@
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2);
+  box-shadow: var(--shadow-card);
+}
+
+.card--active {
+  border-color: var(--border-active);
+  box-shadow: var(--shadow-card), var(--glow-active);
+}
+
+.card--premium {
+  border-color: var(--border-metal);
+  background: linear-gradient(160deg, var(--bg-elevated), var(--bg-secondary));
+}
+
+.card--disabled {
+  opacity: 0.55;
+  filter: grayscale(0.3);
+}

@@ -1,0 +1,71 @@
+.stat-row {
+  display: flex;
+  margin-top: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-default);
+}
+.stat-row > div {
+  flex: 1;
+}
+.stat-row > div + div {
+  border-left: 1px solid var(--border-default);
+  padding-left: 14px;
+}
+.stat-row b {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+}
+.stat-row span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.club-card {
+  margin-top: 16px;
+}
+.club-card b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 17px;
+  text-transform: uppercase;
+}
+.club-card span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.section-title {
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  margin: 26px 0 12px;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+}
+.collection-tile {
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  padding: 13px 6px;
+  text-align: center;
+}
+.collection-tile b {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+}
+.collection-tile span {
+  font-size: 10.5px;
+  color: var(--text-muted);
+}
+
+.list-card {
+  padding: 4px 16px;
+}
