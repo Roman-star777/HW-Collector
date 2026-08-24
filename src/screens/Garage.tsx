@@ -1,8 +1,11 @@
 import { useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Card } from '../components/Card'
+import { Button } from '../components/Button'
 import { CarIcon } from '../components/CarIcon'
 import { SHELVES } from '../data/shelves'
 import { ITEMS, SERIES } from '../data/items'
+import './shared.css'
 import './Garage.css'
 
 const CURRENT_LEVEL = 37
@@ -13,6 +16,7 @@ const unlockedShelves = SHELVES.map((s) => ({ ...s, isUnlocked: CURRENT_LEVEL >=
 const garageItems = ITEMS.slice(0, 6)
 
 export function Garage() {
+  const navigate = useNavigate()
   const [active, setActive] = useState(0)
   const dragStart = useRef<number | null>(null)
   const [dragOffset, setDragOffset] = useState(0)
@@ -104,6 +108,15 @@ export function Garage() {
           <span key={i} className={`shelf-dot${i === active ? ' shelf-dot--on' : ''}`} />
         ))}
       </div>
+
+      <Button
+        variant="secondary"
+        size="sm"
+        style={{ width: '100%', marginTop: 14 }}
+        onClick={() => navigate('/garage/skins')}
+      >
+        Змінити оформлення
+      </Button>
 
       <h2 className="section-title">Готово до відправки</h2>
       <Card>

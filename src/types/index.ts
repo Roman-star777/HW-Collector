@@ -53,3 +53,23 @@ export interface Bid {
   user: string
   amount: number
 }
+
+// ---- Асинхронні лоти (аукціон без ефіру) ----
+export interface AsyncLot {
+  id: string
+  name: string
+  series: SeriesKey
+  art: 'muscle' | 'suv' | 'pickup' | 'hatch'
+  bid: number
+  endsIn: string
+  bids: number
+}
+
+// ---- Розпізнана партія (адмінка) ----
+export interface RecognizedItem {
+  id: string
+  name: string
+  series: SeriesKey
+  art: 'muscle' | 'suv' | 'pickup' | 'hatch'
+  confidence: number
+}

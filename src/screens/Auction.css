@@ -41,16 +41,6 @@
   font-size: 15px;
 }
 
-.lot-title {
-  font-size: 22px;
-  margin-top: 16px;
-}
-.lot-sub {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin: 4px 0 0;
-}
-
 .stage {
   position: relative;
   border-radius: var(--radius-lg);
@@ -113,8 +103,3 @@
   width: 100%;
 }
 
-.note {
-  font-size: 11.5px;
-  color: var(--text-muted);
-  margin-top: 12px;
-}

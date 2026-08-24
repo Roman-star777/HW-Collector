@@ -3,6 +3,7 @@ import { Card } from '../components/Card'
 import { Button } from '../components/Button'
 import { CarIcon } from '../components/CarIcon'
 import type { Bid } from '../types'
+import './shared.css'
 import './Auction.css'
 
 const INITIAL_BIDS: Bid[] = [
@@ -28,8 +29,8 @@ export function Auction() {
         <span className="live-bar__clock">00:27</span>
       </div>
 
-      <h1 className="lot-title">Лот 7 з 24</h1>
-      <p className="lot-sub">Позашляховик 4×4 · рідкісний, тираж 5</p>
+      <h1 className="screen-title">Лот 7 з 24</h1>
+      <p className="screen-sub">Позашляховик 4×4 · рідкісний, тираж 5</p>
 
       <div className="stage">
         <CarIcon shape="suv" color="#20b486" glossy className="stage__car" />

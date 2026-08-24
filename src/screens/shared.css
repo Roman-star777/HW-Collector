@@ -1,0 +1,50 @@
+.screen-title {
+  font-size: 22px;
+  margin-top: 16px;
+}
+.screen-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 4px 0 0;
+}
+
+.note {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+.chip-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 0;
+  background: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-top: 16px;
+  padding: 0;
+}
+.back-link svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--text-muted);
+  fill: none;
+  stroke-width: 2;
+}
+
+
+.section-title {
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  margin: 26px 0 12px;
+}

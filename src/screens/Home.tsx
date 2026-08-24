@@ -7,6 +7,7 @@ import { CarCard } from '../components/CarCard'
 import { LevelBadge } from '../components/LevelBadge'
 import { ITEMS, PRICE_TIERS, SERIES } from '../data/items'
 import type { SeriesKey } from '../types'
+import './shared.css'
 import './Home.css'
 
 const CURRENT_LEVEL = 37
@@ -57,7 +58,7 @@ export function Home() {
       </Card>
 
       {/* Аукціон без ефіру */}
-      <Card className="row-card" onClick={() => navigate('/auction')}>
+      <Card className="row-card" onClick={() => navigate('/offauction')}>
         <span className="row-card__icon">
           <svg viewBox="0 0 24 24">
             <rect x="4" y="4" width="16" height="16" rx="2" />

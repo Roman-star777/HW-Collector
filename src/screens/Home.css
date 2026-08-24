@@ -131,21 +131,6 @@
   color: var(--text-muted);
 }
 
-.section-title {
-  font-size: 14px;
-  color: var(--text-muted);
-  letter-spacing: 0.06em;
-  margin: 26px 0 12px;
-}
-
-.chip-row {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-  scrollbar-width: none;
-}
-
 .fresh-rail {
   display: flex;
   gap: 10px;
@@ -154,3 +139,4 @@
   padding-bottom: 4px;
   scrollbar-width: none;
 }
+

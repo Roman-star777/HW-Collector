@@ -1,6 +1,8 @@
 import { Card } from '../components/Card'
 import { ListItem } from '../components/ListItem'
 import { Button } from '../components/Button'
+import { Link } from 'react-router-dom'
+import './shared.css'
 import './Profile.css'
 
 const ACTIVITY = [
@@ -87,6 +89,10 @@ export function Profile() {
           />
         ))}
       </Card>
+
+      <Link to="/admin" className="admin-link">
+        Для власника · відкрити адмінку
+      </Link>
     </div>
   )
 }

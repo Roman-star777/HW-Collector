@@ -1,0 +1,66 @@
+.item-stage {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: 14px;
+  height: 220px;
+  background: radial-gradient(circle at 50% 30%, var(--bg-elevated), var(--bg-base));
+  display: grid;
+  place-items: center;
+}
+.item-stage__glow {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.3;
+  top: -40px;
+}
+.item-stage__car {
+  width: 74%;
+  position: relative;
+}
+
+.item-info {
+  margin-top: 16px;
+}
+.item-info__series {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.item-info__name {
+  font-size: 21px;
+  margin-top: 4px;
+}
+.item-info__year {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 4px 0 0;
+}
+
+.item-buy {
+  margin-top: 16px;
+}
+.item-buy__price {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.item-buy__price span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.item-buy__price b {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--accent);
+}
+.item-buy__sold {
+  color: var(--text-disabled);
+}
