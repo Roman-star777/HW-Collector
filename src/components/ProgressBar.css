@@ -1,0 +1,42 @@
+.progress-bar__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+.progress-bar__head span {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.progress-bar__head b {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.progress-bar__track {
+  height: 6px;
+  border-radius: 6px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-default);
+  overflow: hidden;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  border-radius: 6px;
+}
+.progress-bar__fill--primary {
+  background: linear-gradient(90deg, var(--accent), var(--red-light));
+}
+.progress-bar__fill--secondary {
+  background: var(--text-muted);
+}
+.progress-bar__fill--success {
+  background: var(--status-success);
+}
+.progress-bar__fill--danger {
+  background: var(--status-danger);
+}

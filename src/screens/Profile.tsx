@@ -1,9 +1,16 @@
 import { Card } from '../components/Card'
 import { ListItem } from '../components/ListItem'
 import { Button } from '../components/Button'
+import { LevelBadge } from '../components/LevelBadge'
+import { ProgressBar } from '../components/ProgressBar'
+import { levelTierOf } from '../data/levels'
 import { Link } from 'react-router-dom'
 import './shared.css'
 import './Profile.css'
+
+const CURRENT_LEVEL = 37
+const XP_CURRENT = 2740
+const XP_NEXT = 4000
 
 const ACTIVITY = [
   { title: 'Історія покупок', subtitle: 'Переглянути всі покупки', icon: 'M3 4h18v17H3z M3 9h18' },
@@ -25,8 +32,21 @@ const COLLECTION_STATS = [
 ]
 
 export function Profile() {
+  const tier = levelTierOf(CURRENT_LEVEL)
   return (
     <div className="pad">
+      <Card variant="premium" className="profile-avatar-card">
+        <span className="profile-avatar">АК</span>
+        <div className="profile-avatar__info">
+          <b>Андрій К.</b>
+          <span>
+            Рівень {CURRENT_LEVEL} · {tier.name.toLowerCase()}
+          </span>
+          <ProgressBar value={(XP_CURRENT / XP_NEXT) * 100} label={`${XP_CURRENT} / ${XP_NEXT} XP`} />
+        </div>
+        <LevelBadge level={CURRENT_LEVEL} size="sm" showLabel={false} />
+      </Card>
+
       <div className="stat-row">
         <div>
           <b>14</b>

@@ -10,11 +10,7 @@ interface ListItemProps {
   showChevron?: boolean
 }
 
-/**
- * Один компонент для Історії покупок/виграшів/Переглянутих лотів/
- * Обраного/Налаштувань (п.23) — замість окремого дизайну під кожен
- * список.
- */
+/** Один компонент для всіх списків застосунку (розділ 8). */
 export function ListItem({ icon, title, subtitle, right, onClick, showChevron = true }: ListItemProps) {
   return (
     <div className="list-item" onClick={onClick} role={onClick ? 'button' : undefined}>

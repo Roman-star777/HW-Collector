@@ -7,10 +7,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 /**
- * Рівно два основних типи за п.8-9: Primary (червона, для live/
- * критичних дій та сильних CTA) і Secondary (темна металева, для
- * другорядних дій). "gold" — задокументований виняток для premium
- * CTA (Club), не третій випадковий стиль.
+ * Рівно два основних типи (розділ 4): Primary (червона, live/
+ * критичні дії, сильні CTA) і Secondary (темна металева, другорядні
+ * дії). "gold" — задокументований виняток для premium CTA (Club).
  */
 export function Button({ variant = 'primary', size = 'md', className, ...rest }: ButtonProps) {
   return (

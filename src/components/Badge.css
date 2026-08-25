@@ -14,9 +14,9 @@
 }
 
 .badge--new {
-  background: rgba(76, 141, 255, 0.16);
-  color: var(--status-info);
-  border: 1px solid rgba(76, 141, 255, 0.35);
+  background: rgba(25, 183, 122, 0.16);
+  color: var(--status-success);
+  border: 1px solid rgba(25, 183, 122, 0.35);
 }
 .badge--rare {
   background: rgba(155, 108, 255, 0.16);
@@ -39,9 +39,9 @@
   border: 1px solid var(--border-default);
 }
 .badge--discount {
-  background: rgba(25, 183, 122, 0.16);
-  color: var(--status-success);
-  border: 1px solid rgba(25, 183, 122, 0.35);
+  background: rgba(255, 138, 0, 0.16);
+  color: var(--accent-alt);
+  border: 1px solid rgba(255, 138, 0, 0.4);
 }
 .badge--premium {
   background: linear-gradient(180deg, #ffcb6b, var(--accent));

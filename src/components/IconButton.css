@@ -1,0 +1,22 @@
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  display: grid;
+  place-items: center;
+}
+.icon-btn svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--text-muted);
+  fill: none;
+  stroke-width: 1.7;
+}
+.icon-btn--active {
+  border-color: var(--border-active);
+}
+.icon-btn--active svg {
+  stroke: var(--accent);
+}

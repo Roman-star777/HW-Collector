@@ -9,18 +9,13 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  transition: filter 0.15s, transform 0.1s;
-}
-
-.btn:active {
-  transform: scale(0.98);
+  transition: filter 0.15s, transform 0.08s;
 }
 
 .btn--md {
   padding: 14px 18px;
   font-size: 14px;
 }
-
 .btn--sm {
   padding: 10px 14px;
   font-size: 12.5px;
@@ -32,7 +27,11 @@
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 4px 14px rgba(255, 45, 32, 0.25);
 }
 .btn--primary:hover {
-  filter: brightness(1.06);
+  filter: brightness(1.08);
+}
+.btn--primary:active {
+  filter: brightness(0.92);
+  transform: scale(0.98);
 }
 
 .btn--secondary {
@@ -42,6 +41,11 @@
 }
 .btn--secondary:hover {
   background: var(--bg-surface);
+  border-color: var(--border-active);
+}
+.btn--secondary:active {
+  background: var(--bg-base);
+  transform: scale(0.98);
 }
 
 .btn--gold {
@@ -49,10 +53,19 @@
   color: #1a1305;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 4px 14px rgba(255, 176, 32, 0.3);
 }
+.btn--gold:hover {
+  filter: brightness(1.05);
+}
+.btn--gold:active {
+  filter: brightness(0.94);
+  transform: scale(0.98);
+}
 
 .btn:disabled {
   background: var(--bg-elevated);
   color: var(--text-disabled);
   box-shadow: none;
   cursor: not-allowed;
+  filter: none;
+  transform: none;
 }

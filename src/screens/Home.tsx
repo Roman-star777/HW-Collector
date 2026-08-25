@@ -5,6 +5,7 @@ import { Chip } from '../components/Chip'
 import { CarCard } from '../components/CarCard'
 import { LevelBadge } from '../components/LevelBadge'
 import { AuctionCard } from '../components/AuctionCard'
+import { ProgressBar } from '../components/ProgressBar'
 import { ITEMS, PRICE_TIERS, SERIES } from '../data/items'
 import type { SeriesKey } from '../types'
 import './shared.css'
@@ -38,9 +39,7 @@ export function Home() {
         <LevelBadge level={CURRENT_LEVEL} size="sm" />
         <div className="player-card__info">
           <b>Андрій К.</b>
-          <div className="player-card__xp-track">
-            <div className="player-card__xp-fill" style={{ width: `${(XP_CURRENT / XP_NEXT) * 100}%` }} />
-          </div>
+          <ProgressBar value={(XP_CURRENT / XP_NEXT) * 100} variant="primary" />
           <span className="player-card__xp-text">
             {XP_CURRENT} / {XP_NEXT} XP
           </span>

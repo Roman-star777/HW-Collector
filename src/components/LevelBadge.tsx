@@ -9,20 +9,25 @@ interface LevelBadgeProps {
 
 /**
  * <LevelBadge level={37} /> сама визначає tier через levelTierOf() —
- * компонент НЕ знає деталей мапінгу, тільки викликає чисту функцію
- * (п.17). Іконка — зірка в щиті, колір і назва tier-у беруться з
- * таблиці рівнів (розділ 14 дизайн-системи). Графіку можна замінити
- * на індивідуальні 10 бейджів пізніше, не чіпаючи логіку рівнів.
+ * компонент НЕ знає деталей мапінгу, тільки викликає чисту функцію.
+ * Іконка — щит із зіркою, колір/назва tier-у з таблиці рівнів
+ * (розділ 10, 10 tier-ів). Графіку можна замінити на 10 індивіду-
+ * альних бейджів пізніше, не чіпаючи логіку рівнів.
  */
 export function LevelBadge({ level, size = 'md', showLabel = true }: LevelBadgeProps) {
   const tier = levelTierOf(level)
   return (
     <div className={`level-badge level-badge--${size}`}>
       <svg viewBox="0 0 40 44" className="level-badge__shield" style={{ color: tier.color }}>
+        <defs>
+          <linearGradient id={`shield-${tier.tier}`} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="currentColor" stopOpacity="0.35" />
+            <stop offset="1" stopColor="currentColor" stopOpacity="0.05" />
+          </linearGradient>
+        </defs>
         <path
           d="M20 2 L37 8 V21 C37 32 30 39 20 43 C10 39 3 32 3 21 V8 Z"
-          fill="currentColor"
-          fillOpacity="0.14"
+          fill={`url(#shield-${tier.tier})`}
           stroke="currentColor"
           strokeWidth="1.6"
         />

@@ -26,19 +26,3 @@
   display: flex;
   gap: 9px;
 }
-.app-header__ic {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-default);
-  display: grid;
-  place-items: center;
-}
-.app-header__ic svg {
-  width: 17px;
-  height: 17px;
-  stroke: var(--text-primary);
-  fill: none;
-  stroke-width: 1.7;
-}

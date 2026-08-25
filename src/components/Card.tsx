@@ -2,7 +2,7 @@ import type { ReactNode, CSSProperties } from 'react'
 import './Card.css'
 
 interface CardProps {
-  variant?: 'default' | 'active' | 'premium' | 'disabled'
+  variant?: 'default' | 'active' | 'selected' | 'premium' | 'disabled'
   children: ReactNode
   className?: string
   style?: CSSProperties
@@ -10,9 +10,10 @@ interface CardProps {
 }
 
 /**
- * Єдиний картковий компонент застосунку (п.7, п.30 дизайн-системи).
- * Замінює 8 незалежних card-класів з прототипу (.plate/.actplate/
- * .colwrap2/.clubcard2/.bay/...) — один компонент, чотири стани.
+ * Єдиний картковий компонент застосунку (розділ 6, "однакова
+ * card language"). "active" = LIVE CARD з документа (червона рамка,
+ * тільки для live/аукціонних станів). "selected" = обраний елемент
+ * у списку вибору (бурштинова рамка) — не плутати з active.
  */
 export function Card({ variant = 'default', children, className, style, onClick }: CardProps) {
   return (

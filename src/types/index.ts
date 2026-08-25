@@ -20,6 +20,7 @@ export interface CarItem {
   rarity: 1 | 2 | 3
   status: ItemStatus
   isNew?: boolean
+  discount?: number
 }
 
 // ---- Рівні колекціонера: 10 tier-ів по 10 рівнів (1-100) ----
@@ -36,7 +37,7 @@ export interface LevelTier {
 export interface ShelfConfig {
   id: string
   name: string
-  type: 'FACTORY' | 'UNDERGROUND' | 'RACING' | 'LUXURY' | 'VAULT'
+  type: 'FACTORY' | 'BLACK_GARAGE' | 'CARBON' | 'RACING' | 'ELITE'
   capacity: number
   background: string
   frameColor: string

@@ -11,10 +11,9 @@ interface CarCardProps {
 }
 
 /**
- * Єдина структура картки авто (п.13): image, категорія, назва,
- * рік, ціна, статус. Той самий компонент у Home/Catalog/Garage —
- * змінюється тільки інформація, не структура. Бейдж і кнопка
- * обраного — за розділом 12 дизайн-системи.
+ * Єдина структура картки авто (розділ 6/12): image, категорія,
+ * назва, рік, ціна, статус. Той самий компонент у Home/Catalog/
+ * Garage — змінюється тільки інформація, не структура.
  */
 export function CarCard({ item, onClick }: CarCardProps) {
   const series = SERIES[item.series]
@@ -30,6 +29,11 @@ export function CarCard({ item, onClick }: CarCardProps) {
         {item.isNew && (
           <span className="car-card__badge">
             <Badge variant="new">Новинка</Badge>
+          </span>
+        )}
+        {!item.isNew && item.discount && (
+          <span className="car-card__badge">
+            <Badge variant="discount">-{item.discount}%</Badge>
           </span>
         )}
         <button

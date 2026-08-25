@@ -12,12 +12,7 @@ interface AuctionCardProps {
   onClick?: () => void
 }
 
-/**
- * Auction Card (розділ 13 дизайн-системи): dark metal, червоний
- * LIVE-бейдж + таймер, заголовок, опис, CTA. Один компонент для
- * банера на Головній і будь-якого іншого місця, де показується
- * "зараз триває ефір" — замість ручного дублювання розмітки.
- */
+/** Auction Card (розділ 6: LIVE CARD) — dark metal, червона рамка, LIVE-бейдж + таймер, CTA. */
 export function AuctionCard({ title, subtitle, timer, ctaLabel, onCta, onClick }: AuctionCardProps) {
   return (
     <Card variant="active" className="auction-card" onClick={onClick}>

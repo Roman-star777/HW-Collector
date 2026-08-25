@@ -1,3 +1,7 @@
+.pad {
+  padding: 0 18px 24px;
+}
+
 .screen-title {
   font-size: 22px;
   margin-top: 16px;
@@ -22,6 +26,13 @@
   scrollbar-width: none;
 }
 
+.section-title {
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  margin: 26px 0 12px;
+}
+
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -39,12 +50,4 @@
   stroke: var(--text-muted);
   fill: none;
   stroke-width: 2;
-}
-
-
-.section-title {
-  font-size: 14px;
-  color: var(--text-muted);
-  letter-spacing: 0.06em;
-  margin: 26px 0 12px;
 }

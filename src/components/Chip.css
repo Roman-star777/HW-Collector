@@ -12,7 +12,6 @@
   text-transform: uppercase;
   cursor: pointer;
 }
-
 .chip[aria-pressed='true'] {
   background: var(--accent);
   border-color: var(--accent);

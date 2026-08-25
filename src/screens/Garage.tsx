@@ -9,10 +9,7 @@ import './shared.css'
 import './Garage.css'
 
 const CURRENT_LEVEL = 37
-// стелаж відкритий, якщо requiredLevel <= поточний рівень користувача
 const unlockedShelves = SHELVES.map((s) => ({ ...s, isUnlocked: CURRENT_LEVEL >= s.requiredLevel }))
-
-// демо-наповнення: перші 6 машинок з каталогу лягають на перший стелаж
 const garageItems = ITEMS.slice(0, 6)
 
 export function Garage() {
@@ -24,7 +21,6 @@ export function Garage() {
   function go(dir: number) {
     setActive((a) => Math.max(0, Math.min(unlockedShelves.length - 1, a + dir)))
   }
-
   function onPointerDown(e: React.PointerEvent) {
     dragStart.current = e.clientX
   }
@@ -41,12 +37,7 @@ export function Garage() {
 
   return (
     <div className="pad">
-      <div
-        className="shelf-stage"
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-      >
+      <div className="shelf-stage" onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp}>
         <div className="shelf-track">
           {unlockedShelves.map((shelf, i) => {
             const offset = i - active
@@ -65,7 +56,7 @@ export function Garage() {
               >
                 <div className="shelf-bay__top">
                   <b>{shelf.name}</b>
-                  <span style={{ color: shelf.glowColor }}>{shelf.type}</span>
+                  <span style={{ color: shelf.glowColor }}>{shelf.type.replace('_', ' ')}</span>
                 </div>
                 <div className="shelf-bay__grid" style={{ ['--glow' as string]: shelf.glowColor }}>
                   {Array.from({ length: shelf.capacity }).map((_, slot) => {
@@ -92,14 +83,10 @@ export function Garage() {
           })}
         </div>
         <button className="shelf-arrow shelf-arrow--l" onClick={() => go(-1)} aria-label="Попередній">
-          <svg viewBox="0 0 24 24">
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" /></svg>
         </button>
         <button className="shelf-arrow shelf-arrow--r" onClick={() => go(1)} aria-label="Наступний">
-          <svg viewBox="0 0 24 24">
-            <path d="m9 18 6-6-6-6" />
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg>
         </button>
       </div>
 
@@ -109,12 +96,7 @@ export function Garage() {
         ))}
       </div>
 
-      <Button
-        variant="secondary"
-        size="sm"
-        style={{ width: '100%', marginTop: 14 }}
-        onClick={() => navigate('/garage/skins')}
-      >
+      <Button variant="secondary" size="sm" style={{ width: '100%', marginTop: 14 }} onClick={() => navigate('/garage/skins')}>
         Змінити оформлення
       </Button>
 

@@ -1,10 +1,10 @@
 import type { LevelTier } from '../types'
 
-// 10 рівних tier-ів по 10 рівнів (1-100), за п.16-17 дизайн-системи.
-// Перші 4 назви й кольори — прямо з еталону (розділ 14: ROOKIE/
-// STREET/PRO/ELITE). Тир 5-10 — узгоджене продовження того самого
-// стилю (англомовні, ігрові), до отримання окремого пакету 10
-// іконок-бейджів. Бізнес-логіка (стелажі/бонуси на tier) НЕ зашита
+// 10 рівних tier-ів по 10 рівнів (1-100), за розділом 10 дизайн-
+// системи v1.6. Назви й кольори — прямо з еталону (ROOKIE → STREET
+// → PRO → ELITE → MASTER → CHAMPION → LEGEND → ICON → MYTHIC →
+// COLLECTOR — фінальний tier названо саме "COLLECTOR", під бренд
+// застосунку). Бізнес-логіка (стелажі/бонуси на tier) НЕ зашита
 // сюди — це чиста таблиця "рівень → tier → назва → колір/бейдж".
 export const LEVEL_TIERS: LevelTier[] = [
   { tier: 1, name: 'ROOKIE', minLevel: 1, maxLevel: 10, badge: 'badge_01', color: '#a56a28' },
@@ -14,9 +14,9 @@ export const LEVEL_TIERS: LevelTier[] = [
   { tier: 5, name: 'MASTER', minLevel: 41, maxLevel: 50, badge: 'badge_05', color: '#9b6cff' },
   { tier: 6, name: 'CHAMPION', minLevel: 51, maxLevel: 60, badge: 'badge_06', color: '#ff5a32' },
   { tier: 7, name: 'LEGEND', minLevel: 61, maxLevel: 70, badge: 'badge_07', color: '#19b77a' },
-  { tier: 8, name: 'ICON', minLevel: 71, maxLevel: 80, badge: 'badge_08', color: '#ffb020' },
+  { tier: 8, name: 'ICON', minLevel: 71, maxLevel: 80, badge: 'badge_08', color: '#8b9098' },
   { tier: 9, name: 'MYTHIC', minLevel: 81, maxLevel: 90, badge: 'badge_09', color: '#ffd27a' },
-  { tier: 10, name: 'GOAT', minLevel: 91, maxLevel: 100, badge: 'badge_10', color: '#ffffff' },
+  { tier: 10, name: 'COLLECTOR', minLevel: 91, maxLevel: 100, badge: 'badge_10', color: '#ffffff' },
 ]
 
 /**
