@@ -1,10 +1,10 @@
+import { Link } from 'react-router-dom'
 import { Card } from '../components/Card'
 import { ListItem } from '../components/ListItem'
 import { Button } from '../components/Button'
 import { LevelBadge } from '../components/LevelBadge'
 import { ProgressBar } from '../components/ProgressBar'
 import { levelTierOf } from '../data/levels'
-import { Link } from 'react-router-dom'
 import './shared.css'
 import './Profile.css'
 
@@ -33,18 +33,16 @@ const COLLECTION_STATS = [
 
 export function Profile() {
   const tier = levelTierOf(CURRENT_LEVEL)
+
   return (
     <div className="pad">
-      <Card variant="premium" className="profile-avatar-card">
-        <span className="profile-avatar">АК</span>
-        <div className="profile-avatar__info">
-          <b>Андрій К.</b>
-          <span>
-            Рівень {CURRENT_LEVEL} · {tier.name.toLowerCase()}
-          </span>
-          <ProgressBar value={(XP_CURRENT / XP_NEXT) * 100} label={`${XP_CURRENT} / ${XP_NEXT} XP`} />
-        </div>
+      <Card variant="premium" className="profile-head">
         <LevelBadge level={CURRENT_LEVEL} size="sm" showLabel={false} />
+        <div className="profile-head__info">
+          <b>Андрій К.</b>
+          <span>Рівень {CURRENT_LEVEL} · {tier.name.toLowerCase()}</span>
+          <ProgressBar value={(XP_CURRENT / XP_NEXT) * 100} variant="primary" />
+        </div>
       </Card>
 
       <div className="stat-row">
@@ -83,11 +81,7 @@ export function Profile() {
             key={a.title}
             title={a.title}
             subtitle={a.subtitle}
-            icon={
-              <svg viewBox="0 0 24 24">
-                <path d={a.icon} />
-              </svg>
-            }
+            icon={<svg viewBox="0 0 24 24"><path d={a.icon} /></svg>}
             onClick={() => {}}
           />
         ))}
@@ -100,19 +94,13 @@ export function Profile() {
             key={a.title}
             title={a.title}
             subtitle={a.subtitle}
-            icon={
-              <svg viewBox="0 0 24 24">
-                <path d={a.icon} />
-              </svg>
-            }
+            icon={<svg viewBox="0 0 24 24"><path d={a.icon} /></svg>}
             onClick={() => {}}
           />
         ))}
       </Card>
 
-      <Link to="/admin" className="admin-link">
-        Для власника · відкрити адмінку
-      </Link>
+      <Link to="/admin" className="admin-link">Для власника · відкрити адмінку</Link>
     </div>
   )
 }

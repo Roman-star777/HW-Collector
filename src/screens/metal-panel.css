@@ -1,0 +1,30 @@
+/* Спільний "індустріальний метал" вигляд — заклепки по кутах +
+   ледь помітна діамантова текстура. Використовується тільки на
+   Home screen (референс), інші екрани не чіпаються. */
+
+.metal-panel {
+  position: relative;
+  background-color: var(--bg-surface);
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,.015) 0, rgba(255,255,255,.015) 1px, transparent 1px, transparent 6px),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,.015) 0, rgba(255,255,255,.015) 1px, transparent 1px, transparent 6px);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+}
+.metal-panel--gold {
+  border-color: var(--border-active);
+}
+
+.rivet {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #8a6a38, #2a1f10 70%);
+  box-shadow: 0 0 0 1px rgba(0,0,0,.6);
+  pointer-events: none;
+}
+.rivet--tl { top: 7px; left: 7px; }
+.rivet--tr { top: 7px; right: 7px; }
+.rivet--bl { bottom: 7px; left: 7px; }
+.rivet--br { bottom: 7px; right: 7px; }

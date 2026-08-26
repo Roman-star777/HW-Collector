@@ -13,17 +13,13 @@ export function OffAuction() {
   const [lots, setLots] = useState(ASYNC_LOTS)
 
   function bid(id: string) {
-    setLots((prev) =>
-      prev.map((l) => (l.id === id ? { ...l, bid: l.bid + 30, bids: l.bids + 1 } : l))
-    )
+    setLots((prev) => prev.map((l) => (l.id === id ? { ...l, bid: l.bid + 30, bids: l.bids + 1 } : l)))
   }
 
   return (
     <div className="pad">
       <button className="back-link" onClick={() => navigate(-1)}>
-        <svg viewBox="0 0 24 24">
-          <path d="M15 18l-6-6 6-6" />
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" /></svg>
         Назад
       </button>
       <h1 className="screen-title">Аукціон без ефіру</h1>
@@ -39,9 +35,7 @@ export function OffAuction() {
               </div>
               <div className="lot-row__body">
                 <b>{lot.name}</b>
-                <span>
-                  {series.name} · закриється через {lot.endsIn} · {lot.bids} ставок
-                </span>
+                <span>{series.name} · закриється через {lot.endsIn} · {lot.bids} ставок</span>
                 <div className="lot-row__bottom">
                   <div>
                     <span className="lot-row__label">поточна ставка</span>

@@ -3,7 +3,6 @@
   color: var(--text-muted);
   margin: 0 0 12px;
 }
-
 .scan-list {
   display: flex;
   flex-direction: column;
@@ -47,7 +46,6 @@
 .scan-row__conf--low {
   color: var(--status-danger);
 }
-
 .unpaid-row {
   display: flex;
   justify-content: space-between;

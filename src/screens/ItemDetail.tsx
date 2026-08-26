@@ -17,9 +17,7 @@ export function ItemDetail() {
     return (
       <div className="pad">
         <p className="note">Товар не знайдено.</p>
-        <Button variant="secondary" size="sm" onClick={() => navigate(-1)}>
-          Назад
-        </Button>
+        <Button variant="secondary" size="sm" onClick={() => navigate(-1)}>Назад</Button>
       </div>
     )
   }
@@ -29,9 +27,7 @@ export function ItemDetail() {
   return (
     <div className="pad">
       <button className="back-link" onClick={() => navigate(-1)}>
-        <svg viewBox="0 0 24 24">
-          <path d="M15 18l-6-6 6-6" />
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" /></svg>
         Назад
       </button>
 
@@ -62,13 +58,7 @@ export function ItemDetail() {
               <span>Ціна</span>
               <b>{item.price} ₴</b>
             </div>
-            <Button
-              variant="primary"
-              size="sm"
-              style={{ width: '100%', marginTop: 12 }}
-              disabled={bought}
-              onClick={() => setBought(true)}
-            >
+            <Button variant="primary" size="sm" style={{ width: '100%', marginTop: 12 }} disabled={bought} onClick={() => setBought(true)}>
               {bought ? 'Додано в скриньку' : 'Купити'}
             </Button>
           </>

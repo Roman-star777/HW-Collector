@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Card } from '../components/Card'
 import { Button } from '../components/Button'
+import { Badge } from '../components/Badge'
 import { CarIcon } from '../components/CarIcon'
 import type { Bid } from '../types'
 import './shared.css'
@@ -16,16 +17,14 @@ export function Auction() {
   const [bids, setBids] = useState(INITIAL_BIDS)
   const current = bids[0].amount
 
-  function placeBid() {
+  function bid() {
     setBids((prev) => [{ user: 'Ви', amount: prev[0].amount + 30 }, ...prev])
   }
 
   return (
     <div className="pad">
       <div className="live-bar">
-        <span className="live-bar__dot">
-          <i /> Ефір іде · 37 глядачів
-        </span>
+        <Badge variant="live">● Ефір іде · 37 глядачів</Badge>
         <span className="live-bar__clock">00:27</span>
       </div>
 
@@ -53,7 +52,7 @@ export function Auction() {
             </div>
           </div>
           <div className="bid-right">
-            <Button variant="primary" size="sm" onClick={placeBid}>
+            <Button variant="primary" size="sm" onClick={bid}>
               Ставка {current + 30}
             </Button>
             <Button variant="secondary" size="sm">
@@ -62,9 +61,7 @@ export function Auction() {
           </div>
         </div>
       </Card>
-      <p className="note">
-        Ставка в останні 15 секунд продовжує таймер. Виграш стає на полицю гаража.
-      </p>
+      <p className="note">Ставка в останні 15 секунд продовжує таймер. Виграш стає на полицю гаража.</p>
     </div>
   )
 }

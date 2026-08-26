@@ -21,7 +21,6 @@
   width: 74%;
   position: relative;
 }
-
 .item-info {
   margin-top: 16px;
 }
@@ -42,7 +41,6 @@
   color: var(--text-muted);
   margin: 4px 0 0;
 }
-
 .item-buy {
   margin-top: 16px;
 }

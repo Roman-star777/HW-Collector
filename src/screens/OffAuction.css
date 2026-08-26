@@ -4,7 +4,6 @@
   gap: 12px;
   margin-top: 16px;
 }
-
 .lot-row {
   display: flex;
   gap: 12px;
@@ -23,7 +22,6 @@
 .lot-row__art svg {
   width: 100%;
 }
-
 .lot-row__body {
   flex: 1;
   min-width: 0;
@@ -37,7 +35,6 @@
   font-size: 11.5px;
   color: var(--text-muted);
 }
-
 .lot-row__bottom {
   display: flex;
   align-items: center;

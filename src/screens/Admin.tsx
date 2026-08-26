@@ -9,7 +9,7 @@ import './shared.css'
 import './Admin.css'
 
 const UNPAID = [
-  { id: 'u1', name: "Позашляховик 4×4", price: 260, buyer: '@olena.toys' },
+  { id: 'u1', name: 'Позашляховик 4×4', price: 260, buyer: '@olena.toys' },
   { id: 'u2', name: "Купе 71', зелений", price: 320, buyer: '@maks_hw' },
 ]
 
@@ -20,9 +20,7 @@ export function Admin() {
   return (
     <div className="pad">
       <button className="back-link" onClick={() => navigate('/profile')}>
-        <svg viewBox="0 0 24 24">
-          <path d="M15 18l-6-6 6-6" />
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" /></svg>
         Профіль
       </button>
       <h1 className="screen-title">Адмінка</h1>
@@ -39,22 +37,16 @@ export function Admin() {
           </>
         ) : (
           <>
-            <p className="admin-hint">
-              Розпізнано {RECOGNIZED_BATCH.length} з {RECOGNIZED_BATCH.length} · 4 секунди
-            </p>
+            <p className="admin-hint">Розпізнано {RECOGNIZED_BATCH.length} з {RECOGNIZED_BATCH.length} · 4 секунди</p>
             <div className="scan-list">
               {RECOGNIZED_BATCH.map((r) => (
                 <div key={r.id} className="scan-row">
-                  <span className="scan-row__art">
-                    <CarIcon shape={r.art} color={SERIES[r.series].color} />
-                  </span>
+                  <span className="scan-row__art"><CarIcon shape={r.art} color={SERIES[r.series].color} /></span>
                   <div className="scan-row__body">
                     <b>{r.name}</b>
                     <span>{SERIES[r.series].name}</span>
                   </div>
-                  <span className={`scan-row__conf${r.confidence < 85 ? ' scan-row__conf--low' : ''}`}>
-                    {r.confidence}%
-                  </span>
+                  <span className={`scan-row__conf${r.confidence < 85 ? ' scan-row__conf--low' : ''}`}>{r.confidence}%</span>
                 </div>
               ))}
             </div>

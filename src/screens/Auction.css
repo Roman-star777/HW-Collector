@@ -8,39 +8,11 @@
   padding: 11px 14px;
   margin-top: 16px;
 }
-.live-bar__dot {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--red);
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-.live-bar__dot i {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--red);
-  display: inline-block;
-  animation: pulse 1.4s infinite;
-}
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.25;
-  }
-}
 .live-bar__clock {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 15px;
 }
-
 .stage {
   position: relative;
   border-radius: var(--radius-lg);
@@ -54,7 +26,6 @@
 .stage__car {
   width: 70%;
 }
-
 .bid-card {
   margin-top: 14px;
 }
@@ -91,7 +62,6 @@
   color: var(--text-primary);
   font-weight: 500;
 }
-
 .bid-right {
   width: 36%;
   flex: none;
@@ -102,4 +72,3 @@
 .bid-right .btn {
   width: 100%;
 }
-
