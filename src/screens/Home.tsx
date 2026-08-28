@@ -77,7 +77,19 @@ export function Home() {
       {/* Клуб колекціонерів */}
       <div className="metal-panel metal-panel--gold club-card2">
         <Rivets />
-        <div className="club-card2__bg" />
+        <div className="club-card2__bg">
+          <svg viewBox="0 0 220 90" className="club-card2__car">
+            <defs>
+              <linearGradient id="club-car-grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stopColor="#6b7078" />
+                <stop offset="1" stopColor="#22252a" />
+              </linearGradient>
+            </defs>
+            <path fill="url(#club-car-grad)" d="M10 68c0-6 6-9 14-10l24-2 20-16c4-3 9-4 15-4h44c6 0 11 2 14 6l12 13 24 3c6 1 9 4 9 9v6c0 3-2 5-5 5H15c-3 0-5-2-5-5z" />
+            <circle fill="#050506" cx="58" cy="70" r="12" />
+            <circle fill="#050506" cx="160" cy="70" r="12" />
+          </svg>
+        </div>
         <span className="club-card2__icon">
           <svg viewBox="0 0 24 24"><path d="M12 21c-4.5-1.8-7-5.2-7-9.5V6l7-2.5L19 6v5.5c0 4.3-2.5 7.7-7 9.5z" /><path d="M8 8l1.3 2.3L12 7l2.7 3.3L16 8v3H8z" /></svg>
         </span>
@@ -144,6 +156,9 @@ export function Home() {
                 <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.3-8.8C1.4 8 3 5 6.2 5c1.9 0 3.3 1 4.4 2.7C11.7 6 13.1 5 15 5c3.2 0 4.8 3 3.5 6.2C16.2 15.6 12 20 12 20z" /></svg>
               </button>
               <div className="product-card2__art">
+                <span className="product-card2__banner">
+                  <span>Колекція 1:64</span>
+                </span>
                 <ProductShot shape={item.art} color={series.color} />
               </div>
               <div className="product-card2__body">
@@ -179,10 +194,9 @@ export function Home() {
         <Rivets />
         <span className="row-card2__icon">
           <svg viewBox="0 0 24 24">
-            <line x1="7" y1="5" x2="15" y2="5" />
-            <line x1="11" y1="5" x2="11" y2="17" />
-            <line x1="7" y1="20" x2="15" y2="20" />
-            <line x1="11" y1="17" x2="11" y2="20" />
+            <line x1="9" y1="19" x2="17" y2="8" />
+            <line x1="13.5" y1="6" x2="19.5" y2="12" strokeWidth="2.6" />
+            <line x1="5" y1="15.5" x2="11" y2="15.5" />
           </svg>
         </span>
         <div className="row-card2__text">
