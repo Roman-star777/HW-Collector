@@ -34,7 +34,9 @@ export function Home() {
       {/* Картка гравця */}
       <div className="metal-panel player-card2">
         <Rivets />
-        <LevelBadge level={CURRENT_LEVEL} size="md" />
+        <div className="level-plate">
+          <LevelBadge level={CURRENT_LEVEL} size="md" />
+        </div>
         <div className="player-card2__mid">
           <b>Андрій К.</b>
           <ProgressBar value={(XP_CURRENT / XP_NEXT) * 100} variant="primary" />

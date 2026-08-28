@@ -1,14 +1,31 @@
 .auction-row {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
-  border: 1px solid var(--red);
   border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, #1c1113, #120b0c);
+  background: linear-gradient(155deg, #241315 0%, #1a1012 45%, #120b0c 100%);
   padding: 12px 14px;
   cursor: pointer;
-  box-shadow: 0 0 14px rgba(255, 45, 32, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 150, 140, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 77, 77, 0.4),
+    0 0 18px rgba(255, 77, 77, 0.16),
+    0 10px 22px rgba(0, 0, 0, 0.55);
 }
+.auction-row__rivet {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #c9a866, #2a2010 75%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.7), 0 1px 1px rgba(255, 255, 255, 0.15) inset;
+}
+.auction-row__rivet--tl { top: 7px; left: 7px; }
+.auction-row__rivet--br { bottom: 7px; right: 7px; }
+
 .auction-row__text {
   flex: 1;
   min-width: 0;
@@ -26,14 +43,14 @@
 }
 .auction-row__timer {
   flex: none;
-  border: 1px solid var(--red);
   border-radius: var(--radius-sm);
   padding: 5px 9px;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 13px;
   color: var(--red-light);
-  background: rgba(255, 45, 32, 0.08);
+  background: rgba(255, 77, 77, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(255, 77, 77, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 .auction-row__chevron {
   flex: none;

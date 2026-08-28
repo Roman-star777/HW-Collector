@@ -14,6 +14,8 @@ interface AuctionCardProps {
 export function AuctionCard({ title, subtitle, timer, onClick }: AuctionCardProps) {
   return (
     <div className="auction-row" onClick={onClick}>
+      <span className="auction-row__rivet auction-row__rivet--tl" />
+      <span className="auction-row__rivet auction-row__rivet--br" />
       <div className="auction-row__badge">
         <Badge variant="live">● Live</Badge>
       </div>

@@ -1,18 +1,77 @@
-/* Спільний "індустріальний метал" вигляд — заклепки по кутах +
-   ледь помітна діамантова текстура. Використовується тільки на
-   Home screen (референс), інші екрани не чіпаються. */
+/* ============================================================
+   МЕТАЛЕВА ПАНЕЛЬ — матеріальна система Home screen (референс
+   91E9D4EF, design system). Шари: фон-метал → фаска (bevel) →
+   текстура → підсвітка країв → зовнішня тінь. Не просто рамка —
+   кожен шар додає окрему властивість, разом дають фізичну глибину.
+   Тільки для Home screen, інші екрани не чіпаються.
+   ============================================================ */
+
+:root {
+  --metal-1: #121316;
+  --metal-2: #1a1d21;
+  --metal-3: #22272e;
+  --metal-gold: #d4af37;
+  --metal-red: #ff4d4d;
+  --metal-red-dim: #aa3f46;
+  --rivet-light: #c9a866;
+  --rivet-dark: #2a2010;
+}
 
 .metal-panel {
   position: relative;
-  background-color: var(--bg-surface);
-  background-image:
-    repeating-linear-gradient(45deg, rgba(255,255,255,.015) 0, rgba(255,255,255,.015) 1px, transparent 1px, transparent 6px),
-    repeating-linear-gradient(-45deg, rgba(255,255,255,.015) 0, rgba(255,255,255,.015) 1px, transparent 1px, transparent 6px);
-  border: 1px solid var(--border-default);
   border-radius: var(--radius-lg);
+  background:
+    /* перфорація — ледь помітні дірки */
+    radial-gradient(circle, rgba(0,0,0,.5) 1px, transparent 1px) 0 0/10px 10px,
+    /* фаска: світліше зверху-зліва, темніше знизу-справа */
+    linear-gradient(155deg, var(--metal-3) 0%, var(--metal-2) 45%, var(--metal-1) 100%);
+  border: 1px solid #05060700;
+  box-shadow:
+    /* внутрішня підсвітка верхнього краю (bevel highlight) */
+    inset 0 1px 0 rgba(255,255,255,.09),
+    /* внутрішня тінь нижнього краю (bevel shadow) */
+    inset 0 -1px 0 rgba(0,0,0,.6),
+    /* внутрішня тінь по периметру — відчуття заглибленої панелі */
+    inset 0 0 0 1px rgba(0,0,0,.5),
+    /* зовнішня тінь — панель фізично піднята над фоном */
+    0 10px 22px rgba(0,0,0,.55),
+    0 2px 4px rgba(0,0,0,.4);
 }
+/* тонка металева рамка поверх фаски */
+.metal-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.4);
+  pointer-events: none;
+}
+
 .metal-panel--gold {
-  border-color: var(--border-active);
+  box-shadow:
+    inset 0 1px 0 rgba(255,214,140,.14),
+    inset 0 -1px 0 rgba(0,0,0,.6),
+    inset 0 0 0 1px rgba(0,0,0,.5),
+    0 0 0 1px rgba(212,175,55,.35),
+    0 0 18px rgba(212,175,55,.14),
+    0 10px 22px rgba(0,0,0,.55);
+}
+.metal-panel--gold::before {
+  border-color: rgba(212,175,55,.4);
+}
+
+.metal-panel--live {
+  box-shadow:
+    inset 0 1px 0 rgba(255,150,140,.12),
+    inset 0 -1px 0 rgba(0,0,0,.6),
+    inset 0 0 0 1px rgba(0,0,0,.5),
+    0 0 0 1px rgba(255,77,77,.4),
+    0 0 18px rgba(255,77,77,.16),
+    0 10px 22px rgba(0,0,0,.55);
+}
+.metal-panel--live::before {
+  border-color: rgba(255,77,77,.45);
 }
 
 .rivet {
@@ -20,11 +79,15 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #8a6a38, #2a1f10 70%);
-  box-shadow: 0 0 0 1px rgba(0,0,0,.6);
+  background: radial-gradient(circle at 35% 30%, var(--rivet-light), var(--rivet-dark) 75%);
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,.7),
+    0 1px 1px rgba(255,255,255,.15) inset,
+    0 1px 2px rgba(0,0,0,.5);
   pointer-events: none;
+  z-index: 1;
 }
-.rivet--tl { top: 7px; left: 7px; }
-.rivet--tr { top: 7px; right: 7px; }
-.rivet--bl { bottom: 7px; left: 7px; }
-.rivet--br { bottom: 7px; right: 7px; }
+.rivet--tl { top: 8px; left: 8px; }
+.rivet--tr { top: 8px; right: 8px; }
+.rivet--bl { bottom: 8px; left: 8px; }
+.rivet--br { bottom: 8px; right: 8px; }
