@@ -13,18 +13,73 @@
   font-weight: 700;
   font-size: 15px;
 }
-.stage {
+.stage2 {
   position: relative;
+  width: 100%;
   border-radius: var(--radius-lg);
   overflow: hidden;
   margin-top: 14px;
-  height: 200px;
-  background: radial-gradient(circle at 50% 30%, var(--bg-elevated), var(--bg-base));
-  display: grid;
-  place-items: center;
+  background-size: 100% 100%;
+  background-position: center;
 }
-.stage__car {
-  width: 70%;
+
+.live-stats {
+  display: flex;
+  margin-top: 12px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  padding: 12px 3px;
+}
+.live-stats__col {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 2px;
+  min-width: 0;
+}
+.live-stats__col + .live-stats__col {
+  border-left: 1px solid var(--border-default);
+}
+.live-stats__col svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  stroke: var(--text-muted);
+  fill: none;
+  stroke-width: 1.6;
+}
+.live-stats__col div {
+  line-height: 1.2;
+  min-width: 0;
+}
+.live-stats__col b {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.live-stats__col span {
+  display: block;
+  font-size: 8px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.live-stats__label {
+  font-size: 8px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.live-stats__ok {
+  color: var(--status-success) !important;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 .bid-card {
   margin-top: 14px;
