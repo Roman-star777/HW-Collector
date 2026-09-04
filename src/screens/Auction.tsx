@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { Card } from '../components/Card'
 import { Button } from '../components/Button'
-import { Badge } from '../components/Badge'
+import { Rivets } from './Rivets'
 import * as A from './auctionAssets'
 import type { Bid } from '../types'
 import './shared.css'
+import './metal-panel.css'
 import './Auction.css'
 
 const INITIAL_BIDS: Bid[] = [
@@ -23,8 +23,10 @@ export function Auction() {
 
   return (
     <div className="pad">
-      <div className="live-bar">
-        <Badge variant="live">● Ефір іде · 37 глядачів</Badge>
+      <div className="metal-panel metal-panel--live live-bar">
+        <Rivets />
+        <span className="live-bar__badge">● LIVE</span>
+        <span className="live-bar__text">Ефір іде · 37 глядачів</span>
         <span className="live-bar__clock">00:27</span>
       </div>
 
@@ -34,7 +36,8 @@ export function Auction() {
       {/* Сцена з макета — актуальний лот (позашляховик, зелений) збігається з демо-даними */}
       <div className="stage2" style={{ aspectRatio: `1 / ${A.A_STAGE_RATIO}`, backgroundImage: `url(${A.A_STAGE})` }} />
 
-      <Card className="bid-card">
+      <div className="metal-panel bid-card">
+        <Rivets />
         <div className="bid-grid">
           <div className="bid-left">
             <div className="bid-amount">
@@ -59,10 +62,10 @@ export function Auction() {
             </Button>
           </div>
         </div>
-      </Card>
+      </div>
 
-      {/* Рядок статистики ефіру — новий блок за референсом */}
-      <div className="live-stats">
+      <div className="metal-panel live-stats">
+        <Rivets />
         <div className="live-stats__col">
           <svg viewBox="0 0 24 24"><path d="M17 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1" /><circle cx="10" cy="7" r="3.5" /><path d="M21 20v-1a4 4 0 0 0-3-3.9" /><path d="M16.5 3.6A3.5 3.5 0 0 1 19 7a3.5 3.5 0 0 1-2.5 3.4" /></svg>
           <div>
