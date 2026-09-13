@@ -1,84 +1,32 @@
-# HW Collector
+# React + TypeScript + Vite
 
-React + TypeScript + Vite версія застосунку. Побудована за
-`HW COLLECTOR — MASTER DESIGN SYSTEM v1.0`.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## Що вже готово
+Currently, two official plugins are available:
 
-- Дизайн-токени (`src/styles/tokens.css`) — кольори/шрифти/радіуси/
-  відступи точно за документом.
-- Базові компоненти: `Card`, `Button` (primary/secondary/gold),
-  `Chip`, `ListItem`, `LevelBadge`, `CarCard`, `Header`, `BottomNav`.
-- Система рівнів: `src/data/levels.ts` — 10 tier-ів по 10 рівнів,
-  функція `levelTierOf(level)`.
-- Система стелажів: `src/data/shelves.ts` — 5 іменованих стелажів
-  (Factory/Underground/Racing/Luxury/Vault), незалежних від
-  автомобілів.
-- **9 екранів**: Головна, Гараж (карусель стелажів), Оформлення
-  гаража, Ефір (ставки), Аукціон без ефіру (окремі асинхронні
-  ставки), Каталог (пошук + фільтр за серією), Картка товару,
-  Профіль (з карткою аватара й рівня), Адмінка.
-- **Badge** — 9 варіантів (new/rare/exclusive/live/sold/discount/
-  premium/club/limited), кольори точно за v1.6.
-- **ProgressBar** — 4 варіанти (primary/secondary/success/danger).
-- **SearchInput / Select / FilterButton** — поля вводу (розділ 09).
-- **LevelBadge** — щит-зірка, 10 tier-ів **ROOKIE → COLLECTOR**,
-  кожен зі своїм кольором, з `src/data/levels.ts`.
-- **5 стелажів**: FACTORY, BLACK GARAGE, CARBON, RACING, ELITE
-  (`src/data/shelves.ts`) — назви точно за розділом 11 v1.6.
-- **AuctionCard**, **CarCard** (бейдж + обране) — перевикористовувані
-  компоненти замість ручного дублювання розмітки.
-- Навігація через `react-router-dom`, спільні класи в
-  `src/screens/shared.css`.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Що ще НЕ перенесено
+## React Compiler
 
-Реальні дані — усе ще в `src/data/*.ts`-заглушках. Підключення
-Supabase (авторизація, реальний каталог, реальні ставки/скринька) —
-наступний великий крок.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Встановлення й запуск
+## Expanding the Oxlint configuration
 
-Потрібен Node.js 18+.
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
 
-```bash
-npm install
-npm run dev
-```
-Відкриє застосунок на `http://localhost:5173`.
-
-Production-збірка (перевірка, що все компілюється без помилок):
-```bash
-npm run build
-npm run preview
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
 ```
 
-## Завантаження на GitHub
-
-```bash
-git init
-git add .
-git commit -m "HW Collector: React foundation"
-git branch -M main
-git remote add origin https://github.com/ВАШ_ЛОГІН/НАЗВА_РЕПО.git
-git push -u origin main
-```
-`node_modules` і `dist` вже в `.gitignore` — не потраплять у репозиторій.
-
-## Структура проєкту
-
-```
-src/
-  components/   — переюзабельні UI-компоненти (Card, Button, Chip…)
-  data/         — дані застосунку (levels.ts, shelves.ts, items.ts)
-  screens/      — екрани (Home, Garage, Auction, Profile)
-  styles/       — дизайн-токени (tokens.css)
-  types/        — спільні TypeScript-типи
-  App.tsx       — маршрутизація
-  main.tsx      — точка входу
-```
-
-## Наступний крок
-
-Підключити реальні дані (Supabase) замість `src/data/*.ts`-заглушок:
-авторизація, реальний каталог, реальні ставки й скринька.
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.

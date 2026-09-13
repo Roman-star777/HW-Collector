@@ -10,7 +10,6 @@ import { Catalog } from './screens/Catalog'
 import { ItemDetail } from './screens/ItemDetail'
 import { Profile } from './screens/Profile'
 import { Admin } from './screens/Admin'
-
 export default function App() {
   return (
     <>

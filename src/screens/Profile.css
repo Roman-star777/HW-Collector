@@ -1,106 +1,17 @@
-.profile-head {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 16px;
-}
-.profile-head__info {
-  flex: 1;
-  min-width: 0;
-}
-.profile-head__info b {
-  display: block;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 17px;
-  text-transform: uppercase;
-}
-.profile-head__info > span {
-  display: block;
-  font-size: 12px;
-  color: var(--text-muted);
-  margin: 2px 0 8px;
-  text-transform: capitalize;
-}
-
-.stat-row {
-  display: flex;
-  margin-top: 16px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--border-default);
-}
-.stat-row > div {
-  flex: 1;
-}
-.stat-row > div + div {
-  border-left: 1px solid var(--border-default);
-  padding-left: 14px;
-}
-.stat-row b {
-  display: block;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 19px;
-}
-.stat-row span {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-
-.club-card {
-  margin-top: 16px;
-}
-.club-card b {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 17px;
-  text-transform: uppercase;
-}
-.club-card span {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-
-.collection-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 9px;
-}
-.collection-tile {
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-md);
-  background: var(--bg-elevated);
-  padding: 13px 6px;
-  text-align: center;
-}
-.collection-tile b {
-  display: block;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 18px;
-}
-.collection-tile span {
-  font-size: 10.5px;
-  color: var(--text-muted);
-}
-
-.list-card {
-  padding: 4px 16px;
-}
-
-.admin-link {
-  display: block;
-  text-align: center;
-  margin-top: 16px;
-  padding: 14px;
-  border-radius: var(--radius-md);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-default);
-  color: var(--text-primary);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  text-decoration: none;
-}
+.profile-head { display: flex; align-items: center; gap: 14px; margin-top: 16px; }
+.profile-head__info { flex: 1; min-width: 0; }
+.profile-head__info b { display: block; font-family: var(--font-display); font-weight: 700; font-size: 17px; text-transform: uppercase; }
+.profile-head__info > span { display: block; font-size: 12px; color: var(--text-muted); margin: 2px 0 8px; text-transform: capitalize; }
+.stat-row { display: flex; margin-top: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--border-default); }
+.stat-row > div { flex: 1; } .stat-row > div + div { border-left: 1px solid var(--border-default); padding-left: 14px; }
+.stat-row b { display: block; font-family: var(--font-display); font-weight: 700; font-size: 19px; }
+.stat-row span { font-size: 12px; color: var(--text-muted); }
+.club-card { margin-top: 16px; }
+.club-card b { display: block; font-family: var(--font-display); font-size: 17px; text-transform: uppercase; }
+.club-card span { font-size: 12px; color: var(--text-muted); }
+.collection-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; }
+.collection-tile { border: 1px solid var(--border-default); border-radius: var(--radius-md); background: var(--bg-elevated); padding: 13px 6px; text-align: center; }
+.collection-tile b { display: block; font-family: var(--font-display); font-weight: 700; font-size: 18px; }
+.collection-tile span { font-size: 10.5px; color: var(--text-muted); }
+.list-card { padding: 4px 16px; }
+.admin-link { display: block; text-align: center; margin-top: 16px; padding: 14px; border-radius: var(--radius-md); background: var(--bg-elevated); border: 1px solid var(--border-default); color: var(--text-primary); font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 0.03em; text-transform: uppercase; text-decoration: none; }

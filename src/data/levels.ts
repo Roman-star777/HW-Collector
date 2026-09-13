@@ -1,11 +1,4 @@
 import type { LevelTier } from '../types'
-
-// 10 рівних tier-ів по 10 рівнів (1-100), за розділом 10 дизайн-
-// системи v1.6. Назви й кольори — прямо з еталону (ROOKIE → STREET
-// → PRO → ELITE → MASTER → CHAMPION → LEGEND → ICON → MYTHIC →
-// COLLECTOR — фінальний tier названо саме "COLLECTOR", під бренд
-// застосунку). Бізнес-логіка (стелажі/бонуси на tier) НЕ зашита
-// сюди — це чиста таблиця "рівень → tier → назва → колір/бейдж".
 export const LEVEL_TIERS: LevelTier[] = [
   { tier: 1, name: 'ROOKIE', minLevel: 1, maxLevel: 10, badge: 'badge_01', color: '#a56a28' },
   { tier: 2, name: 'STREET', minLevel: 11, maxLevel: 20, badge: 'badge_02', color: '#b9c2cc' },
@@ -18,16 +11,7 @@ export const LEVEL_TIERS: LevelTier[] = [
   { tier: 9, name: 'MYTHIC', minLevel: 81, maxLevel: 90, badge: 'badge_09', color: '#ffd27a' },
   { tier: 10, name: 'COLLECTOR', minLevel: 91, maxLevel: 100, badge: 'badge_10', color: '#ffffff' },
 ]
-
-/**
- * 1-100 → відповідний tier. Єдина точка правди для визначення
- * рівня користувача — компонент LevelBadge викликає саме цю функцію,
- * а не тримає свою копію таблиці.
- */
 export function levelTierOf(level: number): LevelTier {
   const clamped = Math.min(100, Math.max(1, level))
-  return (
-    LEVEL_TIERS.find((t) => clamped >= t.minLevel && clamped <= t.maxLevel) ??
-    LEVEL_TIERS[0]
-  )
+  return LEVEL_TIERS.find((t) => clamped >= t.minLevel && clamped <= t.maxLevel) ?? LEVEL_TIERS[0]
 }

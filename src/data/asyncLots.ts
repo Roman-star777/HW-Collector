@@ -1,5 +1,4 @@
 import type { AsyncLot } from '../types'
-
 export const ASYNC_LOTS: AsyncLot[] = [
   { id: 'a1', name: "Купе 74', срібне", series: 'classics', art: 'muscle', bid: 260, endsIn: '18 год', bids: 4 },
   { id: 'a2', name: 'Позашляховик Trail', series: 'offroad', art: 'suv', bid: 310, endsIn: '1 день 4 год', bids: 2 },

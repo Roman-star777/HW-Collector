@@ -1,5 +1,4 @@
 import type { RecognizedItem } from '../types'
-
 export const RECOGNIZED_BATCH: RecognizedItem[] = [
   { id: 'r1', name: "Спорткар 69', синій", series: 'muscle', art: 'muscle', confidence: 96 },
   { id: 'r2', name: 'Позашляховик Trail', series: 'offroad', art: 'suv', confidence: 91 },

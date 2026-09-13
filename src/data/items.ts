@@ -1,7 +1,4 @@
 import type { CarItem, Series, SeriesKey } from '../types'
-
-// Кольори серій — окремий, свідомо дозволений шар кольору поза
-// UI-палітрою дизайн-системи (категорійні кольори товару).
 export const SERIES: Record<SeriesKey, Series> = {
   muscle: { key: 'muscle', name: 'Muscle', color: '#ff6b54' },
   offroad: { key: 'offroad', name: 'Off-road', color: '#20b486' },
@@ -9,7 +6,6 @@ export const SERIES: Record<SeriesKey, Series> = {
   classics: { key: 'classics', name: 'Classics', color: '#ffb020' },
   exotics: { key: 'exotics', name: 'Exotics', color: '#a57bff' },
 }
-
 export const ITEMS: CarItem[] = [
   { id: '1', name: "Спорткар 69', синій", series: 'muscle', year: '2024', art: 'muscle', price: 240, rarity: 2, status: 'stock', isNew: true },
   { id: '2', name: 'Позашляховик 4×4', series: 'offroad', year: 'тираж 5', art: 'suv', price: 0, rarity: 3, status: 'live' },
@@ -20,7 +16,6 @@ export const ITEMS: CarItem[] = [
   { id: '7', name: 'Родстер Targa', series: 'exotics', year: '2025', art: 'muscle', price: 380, rarity: 3, status: 'stock', isNew: true },
   { id: '8', name: 'Баггі Dune', series: 'offroad', year: '2024', art: 'suv', price: 190, rarity: 1, status: 'stock' },
 ]
-
 export const PRICE_TIERS = [
   { key: 't1', label: 'До 150', test: (p: number) => p > 0 && p <= 150 },
   { key: 't2', label: '150–200', test: (p: number) => p > 150 && p <= 200 },
