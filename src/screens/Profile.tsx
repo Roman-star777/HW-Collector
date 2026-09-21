@@ -1,15 +1,8 @@
 import { Link } from 'react-router-dom'
 import { Rivets } from './Rivets'
-import { LevelBadge } from '../components/LevelBadge'
-import { ProgressBar } from '../components/ProgressBar'
-import { levelTierOf } from '../data/levels'
 import './shared.css'
 import './metal-panel.css'
 import './Profile.css'
-
-const CURRENT_LEVEL = 37
-const XP_CURRENT = 2740
-const XP_NEXT = 4000
 
 const ACTIVITY = [
   { title: 'Історія покупок', subtitle: 'Переглянути всі покупки', icon: 'M3 4h18v17H3z M3 9h18' },
@@ -39,21 +32,8 @@ function SectionHead({ children }: { children: React.ReactNode }) {
 }
 
 export function Profile() {
-  const tier = levelTierOf(CURRENT_LEVEL)
-
   return (
     <div className="pad profile-pad">
-      <div className="metal-panel player-row mt16">
-        <Rivets />
-        <LevelBadge level={CURRENT_LEVEL} size="md" />
-        <div className="player-row__info">
-          <b>Андрій К.</b>
-          <span>Рівень {CURRENT_LEVEL} · {tier.name.charAt(0) + tier.name.slice(1).toLowerCase()}</span>
-          <ProgressBar value={(XP_CURRENT / XP_NEXT) * 100} variant="primary" />
-        </div>
-        <svg className="player-row__chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg>
-      </div>
-
       <SectionHead>Моя колекція</SectionHead>
       <div className="metal-panel tiles-panel">
         <Rivets />
