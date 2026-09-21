@@ -1,17 +1,132 @@
-.profile-head { display: flex; align-items: center; gap: 14px; margin-top: 16px; }
-.profile-head__info { flex: 1; min-width: 0; }
-.profile-head__info b { display: block; font-family: var(--font-display); font-weight: 700; font-size: 17px; text-transform: uppercase; }
-.profile-head__info > span { display: block; font-size: 12px; color: var(--text-muted); margin: 2px 0 8px; text-transform: capitalize; }
-.stat-row { display: flex; margin-top: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--border-default); }
-.stat-row > div { flex: 1; } .stat-row > div + div { border-left: 1px solid var(--border-default); padding-left: 14px; }
-.stat-row b { display: block; font-family: var(--font-display); font-weight: 700; font-size: 19px; }
-.stat-row span { font-size: 12px; color: var(--text-muted); }
-.club-card { margin-top: 16px; }
-.club-card b { display: block; font-family: var(--font-display); font-size: 17px; text-transform: uppercase; }
-.club-card span { font-size: 12px; color: var(--text-muted); }
-.collection-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; }
-.collection-tile { border: 1px solid var(--border-default); border-radius: var(--radius-md); background: var(--bg-elevated); padding: 13px 6px; text-align: center; }
-.collection-tile b { display: block; font-family: var(--font-display); font-weight: 700; font-size: 18px; }
-.collection-tile span { font-size: 10.5px; color: var(--text-muted); }
-.list-card { padding: 4px 16px; }
-.admin-link { display: block; text-align: center; margin-top: 16px; padding: 14px; border-radius: var(--radius-md); background: var(--bg-elevated); border: 1px solid var(--border-default); color: var(--text-primary); font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 0.03em; text-transform: uppercase; text-decoration: none; }
+.profile-pad { padding-top: 0; }
+
+/* ---- Картка гравця ---- */
+.player-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+.player-row__info { flex: 1; min-width: 0; }
+.player-row__info > b {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+.player-row__info > span {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 2px 0 8px;
+}
+.player-row__chevron {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  stroke: var(--text-muted);
+  fill: none;
+  stroke-width: 2;
+}
+
+/* ---- Заголовок секції: риска + діагональна текстура ---- */
+.p-sectionhead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 0 10px;
+}
+.p-sectionhead__dash {
+  width: 14px;
+  height: 2px;
+  background: var(--accent);
+  flex: none;
+}
+.p-sectionhead h2 {
+  font-size: 14px;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.p-sectionhead__hatch {
+  flex: 1;
+  height: 14px;
+  background: repeating-linear-gradient(135deg, rgba(255,255,255,.05) 0, rgba(255,255,255,.05) 1px, transparent 1px, transparent 5px);
+  border-radius: 3px;
+}
+
+/* ---- Плитки колекції ---- */
+.tiles-panel {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+}
+.mini-tile {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 4px;
+  text-align: center;
+}
+.mini-tile > b:first-child { width: 20px; height: 20px; display: grid; place-items: center; }
+.mini-tile > b:first-child svg { width: 20px; height: 20px; fill: none; stroke-width: 1.7; }
+.mini-tile > b:nth-child(2) {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-primary);
+}
+.mini-tile > span { font-size: 10px; color: var(--text-muted); }
+
+/* ---- Рядки списків ---- */
+.p-rows { display: flex; flex-direction: column; gap: 8px; }
+.p-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  text-decoration: none;
+  color: inherit;
+}
+.p-row__icon {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 176, 32, 0.1);
+  border: 1px solid rgba(255, 176, 32, 0.28);
+  display: grid;
+  place-items: center;
+}
+.p-row__icon svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.7;
+}
+.p-row__icon--gold svg { fill: var(--accent); stroke: none; }
+.p-row__text { flex: 1; min-width: 0; }
+.p-row__text b {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.p-row__text span { font-size: 11.5px; color: var(--text-muted); }
+.p-row__chevron {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  stroke: var(--text-muted);
+  fill: none;
+  stroke-width: 2;
+}
+.p-row--admin .p-row__text b { color: var(--accent); text-transform: uppercase; font-size: 12.5px; }
